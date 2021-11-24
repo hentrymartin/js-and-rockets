@@ -14,7 +14,7 @@ const getData = () => {
 };
 
 /**
- * Filters all the mission which happened on 2018 and belong to any of NASA projects
+ * Filters all the missions which happened on 2018 and belongs to any of NASA projects
  * @param {*} data 
  * @returns 
  */
@@ -32,7 +32,7 @@ const filterData = (data) => {
     const flattened = [].concat.apply([], customers);
     let isNasaMission = false;
 
-    // Since we need to display all the missions which belongs NASA but different projects
+    // Since we need to display all the missions which belongs NASA but can be of different projects,
     // We have to check if NASA is part of the customer string, if yes then we consider it as NASA projects
     for (let i = 0; i < flattened.length; i++) {
       const customer = flattened[i];
@@ -73,7 +73,7 @@ const mapMissionsByPayloadCount = (data) => {
 };
 
 /**
- * Sorts the data by mapping the missions by payload 
+ * Maps the missions by payload 
  * count and then sort the missions for each
  * payload count by simple sort function
  */
@@ -90,8 +90,7 @@ const sortData = (data) => {
 };
 
 /**
- * This function gets the data from the SpaceX API and
- * prepares it before rendering
+ * Prepares the data retrieved from SpaceX API by filtering and sorting
  */
 const prepareData = (data) => {
   const filtered = filterData(data);
@@ -111,7 +110,7 @@ const prepareData = (data) => {
 };
 
 /**
- * This function renders data in the respective div element
+ * Renders data in the respective div element
  */
 const renderData = (data) => {
   const outputElement = document.getElementById("out");
